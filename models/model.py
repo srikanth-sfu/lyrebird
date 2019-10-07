@@ -1,6 +1,13 @@
 import torch
 import torch.nn as nn
 import numpy
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument('-m', '--model_prefix', default='./models/',help='model checkpoint directory')
+parser.add_argument('-c', '--conditional', action='store_true',help='conditional v/s unconditionali')
+
+
 strokes = numpy.load('../data/strokes.npy')
 stroke = strokes[0]
 
