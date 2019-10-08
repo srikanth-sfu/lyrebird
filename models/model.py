@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import numpy
 import argparse
+import torch.utils.data as utils
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-m', '--model_prefix', default='./models/',help='model checkpoint directory')
@@ -30,8 +31,16 @@ class Net(nn.Module):
 
 model = Net().cuda()
 
-def load(mode='train'):
+def load_mode(mode='train'):
     pass
+
+def load(mode='train'):
+    if mode == 'train':
+        return load_mode(mode)
+    elif mode == 'test':
+        return load_mode(mode)
+        
+    return data_loader
 
 def train():
     model.train()
