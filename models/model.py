@@ -11,7 +11,8 @@ args = parser.parse_args()
 
 
 strokes = numpy.load('../data/strokes.npy')
-print(strokes[0])
+with open('../data/sentences.txt') as f:
+    texts = f.readlines()
 
 class Net(nn.Module):
     def __init__(self):
@@ -26,6 +27,23 @@ class Net(nn.Module):
 
     def forward(x=None):
         pass
+
+model = Net().cuda()
+
+def load(mode='train'):
+    pass
+
+def train():
+    model.train()
+    
+
+def save():
+    pass
+
+def test():
+    model.test()
+
+    pass
 
 
 def generate_unconditionally(random_seed=1):
