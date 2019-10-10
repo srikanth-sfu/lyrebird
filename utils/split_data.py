@@ -13,7 +13,7 @@ def slice_save(idxs, name='train'):
     s = [strokes[x] for x in idxs]
     numpy.save('../data/%s.npy'%(name),s)
     with open('../data/%s.txt'%(name), 'w') as f:
-        f.write('\n'.join(t))
+        f.write(''.join(t))
     f.close()
 
 n_data = len(texts)
